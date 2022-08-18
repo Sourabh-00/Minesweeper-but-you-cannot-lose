@@ -308,17 +308,17 @@ def mine_render(x,y):
         pygame.draw.rect(screen,[180,180,180],[x,y,28,28])
         no_of_mines=font.render(str(flag),True,(160,160,160))
         screen.blit(no_of_mines,(x+7.5,y))
-#def blowup(x,y):
-    #global clock_flag
-    #global flag
-    #global game_over_flag
-    #place_mine()
-    #screen.blit(mineimg,(x,y))
-    #clock_flag=1
-    #flag=10
-    #game_over_flag=1
-    #blast_sound=mixer.Sound('blast.wav')
-    #blast_sound.play()
+def blowup(x,y):
+    global clock_flag
+    global flag
+    global game_over_flag
+    place_mine()
+    screen.blit(mineimg,(x,y))
+    clock_flag=1
+    flag=10
+    game_over_flag=1
+    blast_sound=mixer.Sound('blast.wav')
+    blast_sound.play()
 board_config=np.zeros([16,30],dtype=int)
 def board_update():
     global flag
