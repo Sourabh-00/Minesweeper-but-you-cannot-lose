@@ -85,6 +85,7 @@ def chording(a,b):
                     mine_render((a-2)*30,120+(b-2)*30)
                     cell_status[a-2,b-2]=1
             if flag_map[a-2,b-2]==0 and (a-1,b-1) in array:
+                cell_status[a-2,b-2]=1
                 mine_shifting(a-1,b-1)
                 #blowup((a-2)*30,120+(b-2)*30)
         if a>1:
@@ -98,6 +99,7 @@ def chording(a,b):
                     mine_render((a-2)*30,120+(b-1)*30)
                     cell_status[a-2,b-1]=1
             if flag_map[a-2,b-1]==0 and (a-1,b) in array:
+                cell_status[a-2,b-1]=1
                 mine_shifting(a-1,b)
                 #blowup((a-2)*30,120+(b-1)*30)
         if b<16:
@@ -111,6 +113,7 @@ def chording(a,b):
                     mine_render((a-1)*30,120+(b)*30)
                     cell_status[a-1,b]=1
             if flag_map[a-1,b]==0 and (a,b+1) in array:
+                cell_status[a-1,b]=1
                 mine_shifting(a,b+1)
                 #blowup((a-1)*30,120+(b)*30)
         if a<30 and b<16:
@@ -124,6 +127,7 @@ def chording(a,b):
                     mine_render((a)*30,120+(b)*30)
                     cell_status[a,b]=1
             if flag_map[a,b]==0 and (a+1,b+1) in array:
+                cell_status[a,b]=1
                 mine_shifting(a+1,b+1)
                 #blowup((a)*30,120+(b)*30)
         if a<30:
@@ -137,6 +141,7 @@ def chording(a,b):
                     mine_render((a)*30,120+(b-1)*30)
                     cell_status[a,b-1]=1
             if flag_map[a,b-1]==0 and (a+1,b) in array:
+                cell_status[a,b-1]=1
                 mine_shifting(a+1,b)
                 #blowup((a)*30,120+(b-1)*30)
 
@@ -151,6 +156,7 @@ def chording(a,b):
                     mine_render((a-1)*30,120+(b-2)*30)
                     cell_status[a-1,b-2]=1
             if flag_map[a-1,b-2]==0 and (a,b-1) in array:
+                cell_status[a-1,b-2]=1
                 mine_shifting(a,b-1)
                 #blowup((a-1)*30,120+(b-2)*30)
         if a>1 and b<16:
@@ -164,6 +170,7 @@ def chording(a,b):
                     mine_render((a-2)*30,120+(b)*30)
                     cell_status[a-2,b]=1
             if flag_map[a-2,b]==0 and (a-1,b+1) in array:
+                cell_status[a-2,b]=1
                 mine_shifting(a-1,b+1)
                 #blowup((a-2)*30,120+(b)*30)
         if a<30 and b>1:
@@ -177,6 +184,7 @@ def chording(a,b):
                     mine_render((a)*30,120+(b-2)*30)
                     cell_status[a,b-2]=1
             if flag_map[a,b-2]==0 and (a+1,b-1) in array:
+                cell_status[a,b-2]=1
                 mine_shifting(a+1,b-1)
                 #blowup((a)*30,120+(b-2)*30)
         chord_sound=mixer.Sound('chord.wav')
@@ -373,9 +381,9 @@ def main_game():
             
                 if right_mouse_flag!=1 and flag_map[a-1,b-1]==0 and chord_flag==0 and cell_status[a-1,b-1]==0:
                     if (a,b) in array:
+                        cell_status[a-1,b-1]=1
                         mine_shifting(a,b)
                         #blowup(x,y)
-                        cell_status[a-1,b-1]=1
                     else: 
                         mine_check(a,b)
                         
