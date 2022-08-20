@@ -5,3 +5,5 @@ You can perform chording in this version, if you try to perform a chord on an em
 
 Your first click will always lead an to easy start as i have made it so that cell tripped on the first click will have zero mines around it.
 This means that your first click will open atleast 8 cells unless your first click is in the corner or at the boundry of the board.
+
+As always you can also play normal minesweper version in which you can indeed trip a mine and lose
